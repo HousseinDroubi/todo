@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/sign_up.css">
+</head>
+
+<body class="flex flex-column j-c-c a-i-c min-h-100vh">
+    <h1 class="color-blue">Sign up</h1>
+    <article class="sign-up-box flex flex-column a-i-c j-c-s-e mt-20">
+        <input type="text" id="input_username" class="input-text" placeholder="Enter your username">
+        <input type="password" id="input_password" class="input-text" placeholder="Enter your password">
+        <input type="password" id="input_reset_password" class="input-text" placeholder="Re-enter your password">
+        <button class="button" id="button_sign_up">Sign up</button>
+    </article>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="scripts/sign_up.js"></script>
+</body>
+
+</html>

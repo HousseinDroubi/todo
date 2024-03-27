@@ -1,0 +1,10 @@
+.sign-up-box {
+    width: 400px;
+    height: 500px;
+    border: 1px solid var(--color-blue);
+    border-radius: var(--border-radius-5);
+}
+
+.color-blue {
+    color: var(--color-blue);
+}
