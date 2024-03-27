@@ -6,7 +6,6 @@
 cd backend
 
 npm install
-
 ```
 
 ### 2- Rename _.env.example_ => _.env_ and fill _PORT_
