@@ -9,10 +9,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.post("/authentication/sign_up", (req, res) => {
-  console.log(req.body);
-  return res.json({ result: "You have reached me successfully" });
-});
+import authenticationRoutes from "./routes/authentications.route.js";
+app.use("/authentication", authenticationRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`I'm listening to port ${process.env.PORT}`);
