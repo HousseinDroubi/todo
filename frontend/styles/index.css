@@ -38,9 +38,11 @@
 
 :root {
     --color-white: white;
-    --color-blue: rgb(0, 136, 255);
     --font-size-18: 18px;
     --border-radius-5: 5px;
+    --color-blue: rgb(0, 136, 255);
+    --color-red: #ff0000;
+    --color-green: green;
 }
 
 
@@ -79,4 +81,19 @@
 
 .button:active {
     transform: scale(95%);
+}
+
+
+/* Colors */
+
+.color-blue {
+    color: var(--color-blue);
+}
+
+.color-green {
+    color: var(--color-green);
+}
+
+.color-red {
+    color: var(--color-red);
 }

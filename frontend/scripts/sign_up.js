@@ -2,6 +2,7 @@ const input_username = document.getElementById("input_username");
 const input_password = document.getElementById("input_password");
 const input_reset_password = document.getElementById("input_reset_password");
 const button_sign_up = document.getElementById("button_sign_up");
+const result = document.getElementById("result");
 
 const signUp = () => {
   const username = input_username.value;
@@ -25,10 +26,23 @@ const signUp = () => {
     axios
       .post(url, body)
       .then((response) => {
-        console.log(response.data);
+        if (response.data.result === "user_has_been_created_successfully") {
+          result.classList.remove("color-red");
+          result.classList.add("color-green");
+          result.innerHTML = "Account created, please sign in";
+          input_username.value = "";
+          input_password.value = "";
+          input_reset_password.value = "";
+        } else {
+          result.classList.remove("color-green");
+          result.classList.add("color-red");
+          result.innerHTML = "Something went wrong";
+        }
       })
-      .catch((error) => {
-        console.log(error.message);
+      .catch(() => {
+        result.classList.remove("color-green");
+        result.classList.add("color-red");
+        result.innerHTML = "Something went wrong";
       });
   }
 };

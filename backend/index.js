@@ -4,9 +4,10 @@ import cors from "cors";
 
 dotenv.config();
 
+import "./config/db.config.js";
+
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
 app.use(express.json());
 
 import authenticationRoutes from "./routes/authentications.route.js";
