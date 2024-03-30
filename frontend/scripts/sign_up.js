@@ -17,7 +17,7 @@ const signUp = () => {
   } else if (password !== reset_password) {
     console.log("Password and reset password don't match");
   } else {
-    const url = `http://localhost:4001/authentication/sign_up`;
+    const url = `http://localhost:4002/authentication/sign_up`;
     const body = {
       username: username,
       password: password,
