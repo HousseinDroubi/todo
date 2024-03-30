@@ -20,6 +20,11 @@
     justify-content: center;
 }
 
+
+.j-c-e {
+    justify-content: end;
+}
+
 .j-c-s-e {
     justify-content: space-evenly;
 }
@@ -34,6 +39,14 @@
 
 .mt-20 {
     margin-top: 20px;
+}
+
+.pr-30 {
+    padding-right: 30px;
+}
+
+.w-100 {
+    width: 100%;
 }
 
 :root {

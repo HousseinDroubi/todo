@@ -5,10 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/sign_in.css">
 </head>
 
-<body>
-    <a href="./sign_up.html">Sign up</a>
+<body class="flex flex-column j-c-c a-i-c min-h-100vh">
+    <h1 class="color-blue">Sign in</h1>
+    <article class="sign-in-box flex flex-column a-i-c j-c-s-e mt-20">
+        <input type="text" id="input_username" class="input-text" placeholder="Enter your username">
+        <input type="password" id="input_password" class="input-text" placeholder="Enter your password">
+        <button class="button" id="button_sign_in">Sign in</button>
+        <section class="link-container flex w-100 j-c-e pr-30">
+            <a href="./sign_up.html">Create new account</a>
+        </section>
+        <h4 id="result"></h4>
+    </article>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="scripts/sign_in.js"></script>
 </body>
 
 </html>

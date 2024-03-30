@@ -9,4 +9,8 @@ const validateSignUp = (data) => {
   return schema.validate(data);
 };
 
-export { validateSignUp };
+const validateSignIn = (data) => {
+  return validateSignUp(data);
+};
+
+export { validateSignUp, validateSignIn };
