@@ -1,5 +1,5 @@
 .sign-up-box {
-    width: 400px;
+    width: var(--box-width-400);
     height: 500px;
     border: 1px solid var(--color-blue);
     border-radius: var(--border-radius-5);
