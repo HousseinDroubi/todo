@@ -15,6 +15,16 @@ const signUp = async (req, res) => {
     });
   }
 
+  const user = await User.exists({
+    username: req.body.username,
+  });
+
+  if (user) {
+    return res.json({
+      result: "username_is_taken",
+    });
+  }
+
   // Hashning password
   const salt = await bcrypt.genSalt(Number(process.env.SALT));
   const hashed_password = await bcrypt.hash(req.body.password, salt);

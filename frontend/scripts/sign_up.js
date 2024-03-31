@@ -28,6 +28,7 @@ const signUp = () => {
     axios
       .post(url, body)
       .then((response) => {
+        result.classList.add("color-red");
         if (response.data.result === "user_has_been_created_successfully") {
           result.classList.remove("color-red");
           result.classList.add("color-green");
@@ -35,13 +36,15 @@ const signUp = () => {
           input_username.value = "";
           input_password.value = "";
           input_reset_password.value = "";
+        } else if (response.data.result === "username_is_taken") {
+          result.innerHTML = "Username is taken";
         } else {
           result.classList.remove("color-green");
           result.classList.add("color-red");
           result.innerHTML = "Something went wrong";
         }
       })
-      .catch(() => {
+      .catch((error) => {
         result.classList.remove("color-green");
         result.classList.add("color-red");
         result.innerHTML = "Something went wrong";
