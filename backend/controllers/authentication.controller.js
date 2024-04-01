@@ -1,11 +1,14 @@
 import {
   validateSignIn,
   validateSignUp,
+  validateUpdatePassword,
+  validateUpdateUsername,
 } from "../validations/authentications.validation.js";
 import bcrypt from "bcrypt";
 import dotenv from "dotenv";
 dotenv.config();
 import User from "../models/user.model.js";
+import { getDataFromToken } from "../functions/reusable_functions.js";
 
 const signUp = async (req, res) => {
   const { error } = validateSignUp(req.body);
@@ -63,9 +66,73 @@ const signIn = async (req, res) => {
     });
   }
 
+  const token = user.generateToken();
+
   return res.json({
     result: "done",
+    token,
   });
 };
 
-export { signUp, signIn };
+const updateUsername = async (req, res) => {
+  const data = req.data;
+
+  const { error } = validateUpdateUsername(req.body);
+  if (error) {
+    return res.json({
+      error_message: error.details[0].message,
+    });
+  }
+
+  const is_existed = await User.findOne()
+    .where("username")
+    .equals(req.body.username);
+
+  if (is_existed) {
+    return res.json({
+      result: "username_is_taken",
+    });
+  }
+  const user = await User.findById(data._id);
+
+  user.username = req.body.username;
+
+  await user.save();
+
+  return res.json({
+    result: "username_updated",
+  });
+};
+
+const updatePassword = async (req, res) => {
+  const data = req.data;
+  const { error } = validateUpdatePassword(req.body);
+  if (error) {
+    return res.json({
+      error_message: error.details[0].message,
+    });
+  }
+
+  const user = await User.findById(data._id);
+
+  const is_same = await bcrypt.compare(req.body.old_password, user.password);
+
+  if (!is_same) {
+    return res.json({
+      result: "old_password_is_wrong",
+    });
+  }
+
+  const salt = await bcrypt.genSalt(Number(process.env.SALT));
+  const hashed_password = await bcrypt.hash(req.body.new_password, salt);
+
+  user.password = hashed_password;
+
+  await user.save();
+
+  return res.json({
+    result: "password_changed",
+  });
+};
+
+export { signUp, signIn, updateUsername, updatePassword };

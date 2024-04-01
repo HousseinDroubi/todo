@@ -25,6 +25,10 @@
     justify-content: end;
 }
 
+.j-c-s-b {
+    justify-content: space-between;
+}
+
 .j-c-s-e {
     justify-content: space-evenly;
 }
@@ -39,6 +43,10 @@
 
 .mt-20 {
     margin-top: 20px;
+}
+
+.mr-30 {
+    margin-right: 30px;
 }
 
 .pr-30 {
@@ -110,4 +118,38 @@
 
 .color-red {
     color: var(--color-red);
+}
+
+/* Nav */
+
+ul {
+    list-style: none;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 70px;
+    background-color: var(--color-blue);
+}
+
+.nav h2 {
+    color: var(--color-white);
+}
+
+.nav img {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.bottom-bordered {
+    border-bottom: 3px solid var(--color-white);
+    line-height: 2;
+}
+
+.nav ul>li:first-child>a {
+    /* background-image: url('../assets/icons/all-todos.svg'); */
 }

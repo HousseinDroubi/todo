@@ -24,9 +24,13 @@ const signIn = () => {
         if (response.data.result === "username_or_password_are_wrong") {
           result.innerHTML = "Username or password are wrong";
         } else if (response.data.result === "done") {
+          const seven_days = 60 * 60 * 24 * 7;
+          document.cookie = `token=${response.data.token}; max-age=${seven_days}`;
+          document.cookie = `username=${input_username.value}; max-age=${seven_days}`;
+
           input_username.value = "";
           input_password.value = "";
-          window.location.href = "./landing.html";
+          window.location.href = "./all_todos.html";
         } else {
           result.classList.add("color-red");
           result.innerHTML = "Something went wrong";
