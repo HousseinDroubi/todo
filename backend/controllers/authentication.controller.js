@@ -8,7 +8,6 @@ import bcrypt from "bcrypt";
 import dotenv from "dotenv";
 dotenv.config();
 import User from "../models/user.model.js";
-import { getDataFromToken } from "../functions/reusable_functions.js";
 
 const signUp = async (req, res) => {
   const { error } = validateSignUp(req.body);
