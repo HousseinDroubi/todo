@@ -149,7 +149,3 @@ ul {
     border-bottom: 3px solid var(--color-white);
     line-height: 2;
 }
-
-.nav ul>li:first-child>a {
-    /* background-image: url('../assets/icons/all-todos.svg'); */
-}
