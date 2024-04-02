@@ -57,6 +57,10 @@
     width: 100%;
 }
 
+.display-none {
+    display: none;
+}
+
 :root {
     --color-white: white;
     --font-size-18: 18px;
@@ -148,4 +152,8 @@ ul {
 .bottom-bordered {
     border-bottom: 3px solid var(--color-white);
     line-height: 2;
+}
+
+.h-160 {
+    height: 160px;
 }

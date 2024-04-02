@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Todo</title>
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/add_todo.css">
 
 </head>
 
-<body>
+<body class="flex flex-column j-c-c a-i-c min-h-100vh">
     <!-- Nav -->
     <nav class="nav flex j-c-s-b a-i-c w-100">
         <section>
@@ -40,6 +41,17 @@
             </ul>
         </section>
     </nav>
+
+    <!-- Hero -->
+    <h1 class="color-blue">Add Todo</h1>
+    <article class="add-todo-box flex flex-column a-i-c j-c-s-e mt-20">
+        <textarea type="password" id="textarea_add_todo" class="input-text h-160"
+            placeholder="Enter old password"></textarea>
+        <button class="button" id="button_add_todo">Add Todo</button>
+        <h4 id="result"></h4>
+    </article>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="scripts/add_todo.js"></script>
 </body>
 
 </html>

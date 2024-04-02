@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All todos</title>
+    <title>Update Todo</title>
     <link rel="stylesheet" href="./styles/index.css">
-    <link rel="stylesheet" href="./styles/all_todos.css">
+    <link rel="stylesheet" href="./styles/update_todo.css">
 
 </head>
 
-<body class="min-h-100vh">
+<body class="flex flex-column j-c-c a-i-c min-h-100vh">
     <!-- Nav -->
     <nav class="nav flex j-c-s-b a-i-c w-100">
         <section>
@@ -18,7 +18,7 @@
         </section>
         <section>
             <ul class="flex">
-                <li class="mr-30 bottom-bordered">
+                <li class="mr-30">
                     <a href="./all_todos.html">
                         <img src="./assets/icons/all-todos.svg" alt="">
                     </a>
@@ -42,20 +42,16 @@
         </section>
     </nav>
 
-    <article id="todos_container" class="flex j-c-s-e">
-        <h1 class="color-blue mt-20" id="no_todos"></h1>
-        <!-- !Mock data -->
-        <!-- <section class="todo flex flex-column j-c-c a-i-c">
-            <h2>This is todo</h2>
-            <h4 class="w-100">12,3,2024 at 5:00 pm</h4>
-            <div class="mt-20 flex j-c-s-e w-100">
-                <button>View</button>
-                <button>Delete</button>
-            </div>
-        </section> -->
+    <!-- Hero -->
+    <h1 class="color-blue">Update Todo</h1>
+    <article class="update-todo-box flex flex-column a-i-c j-c-s-e mt-20">
+        <textarea type="password" id="textarea_update_todo" class="input-text h-160"
+            placeholder="Enter old password"></textarea>
+        <button class="button" id="button_update_todo">Update Todo</button>
+        <h4 id="result"></h4>
     </article>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="scripts/all_todos.js"></script>
+    <script src="scripts/update_todo.js"></script>
 </body>
 
 </html>

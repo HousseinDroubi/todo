@@ -1,0 +1,49 @@
+#todos_container {
+    margin-top: 80px;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.todo {
+    padding: 20px;
+    width: 46vw;
+    height: 200px;
+    border: 2px solid var(--color-blue);
+    border-radius: var(--border-radius-5);
+}
+
+.todo>h2 {
+    color: var(--color-blue);
+}
+
+.todo>h4 {
+    margin-top: 40px;
+    text-align: right;
+    color: #a0a0a0;
+}
+
+.todo>div>button {
+    width: 100px;
+    height: 40px;
+    border-radius: var(--border-radius-5);
+    border: none;
+    cursor: pointer;
+}
+
+.todo>div>button:hover {
+    transform: scale(96%);
+}
+
+.todo>div>button:active {
+    transform: scale(92%);
+}
+
+.todo>div>button:first-child {
+    color: var(--color-white);
+    background-color: var(--color-blue);
+}
+
+.todo>div>button:last-child {
+    color: var(--color-white);
+    background-color: var(--color-red);
+}

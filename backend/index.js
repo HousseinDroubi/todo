@@ -13,6 +13,9 @@ app.use(express.json());
 import authenticationRoutes from "./routes/authentications.route.js";
 app.use("/authentication", authenticationRoutes);
 
+import todoRoutes from "./routes/todo.route.js";
+app.use("/todo", todoRoutes);
+
 app.listen(process.env.PORT, () => {
   console.log(`I'm listening to port ${process.env.PORT}`);
 });

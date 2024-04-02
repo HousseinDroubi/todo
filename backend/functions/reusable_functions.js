@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import mongoose from "mongoose";
 
 const getDataFromToken = (token) => {
   try {
@@ -9,4 +10,8 @@ const getDataFromToken = (token) => {
   }
 };
 
-export { getDataFromToken };
+const checkObjectId = (id) => {
+  return mongoose.Types.ObjectId.isValid(id);
+};
+
+export { getDataFromToken, checkObjectId };
