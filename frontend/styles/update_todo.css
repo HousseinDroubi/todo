@@ -4,3 +4,15 @@
     border: 1px solid var(--color-blue);
     border-radius: var(--border-radius-5);
 }
+
+@media screen and (max-width:420px) {
+    .update-todo-box {
+        width: var(--box-width-300);
+    }
+}
+
+@media screen and (max-width:320px) {
+    .update-todo-box {
+        width: var(--box-width-260);
+    }
+}

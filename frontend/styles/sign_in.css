@@ -8,3 +8,17 @@
 .link-container>a:visited {
     color: var(--color-blue);
 }
+
+@media screen and (max-width:420px) {
+    .sign-in-box {
+        width: var(--box-width-300);
+        height: 350px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .sign-in-box {
+        width: var(--box-width-260);
+        height: 350px;
+    }
+}
