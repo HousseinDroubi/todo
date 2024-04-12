@@ -27,7 +27,7 @@ const updatePassword = () => {
   if (old_password.length < 6 || old_password.length > 20) {
     result.innerHTML = "Password must be between 6 and 20";
   } else if (new_password.length < 6 || new_password.length > 20) {
-    result.innerHTML = "Reset password must be between 6 and 20";
+    result.innerHTML = "New password must be between 6 and 20";
   } else if (reset_password.length < 6 || reset_password.length > 20) {
     result.innerHTML = "Reset password must be between 6 and 20";
   } else if (new_password !== reset_password) {
